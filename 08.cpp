@@ -16,6 +16,8 @@ void fastIO() {
 
 int main() {
     fastIO();
-    int a; cin >> a;
-    cout << 4 * a << ' ' << a * a;
+    double a, b, c; cin >> a >> b >> c;
+    double semi_perimeter = (a + b + c) / 2;
+    double area = sqrt(semi_perimeter * (semi_perimeter - a) * (semi_perimeter - b) * (semi_perimeter - c));
+    cout << fixed << setprecision(3) << a * b * c / (4 * area);
 }

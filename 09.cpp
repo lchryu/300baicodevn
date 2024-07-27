@@ -16,6 +16,6 @@ void fastIO() {
 
 int main() {
     fastIO();
-    int a; cin >> a;
-    cout << 4 * a << ' ' << a * a;
+    double a, b, c; cin >> a >> b >> c;
+    cout << fixed << setprecision(1) << ((a + b) * 2 + c)/5;
 }

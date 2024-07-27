@@ -16,5 +16,6 @@ void fastIO() {
 
 int main() {
     fastIO();
-    
+    int side, height; cin >> side >> height;
+    cout << fixed << setprecision(2) << 1.0 * side * height / 2;
 }

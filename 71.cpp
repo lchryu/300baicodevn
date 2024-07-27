@@ -8,14 +8,21 @@ using ll = long long;
 void fastIO() {
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    //freopen("output.txt", "w", stdout);
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); 
+    system("cls");
 }
-
 int main() {
     fastIO();
-    int a; cin >> a;
-    cout << 4 * a << ' ' << a * a;
+    string s; getline(cin, s);
+    string x; getline(cin, x);
+    string y; getline(cin, y);
+    for (int i = 0; i < s.size(); i++) {
+        if (x == s.substr(i, x.size())) {
+            s.replace(i, x.size(), y);
+        }
+    }
+    cout << s;
 }
