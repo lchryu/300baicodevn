@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main() {
     string s; getline(cin, s);
-    string word;
     stringstream ss(s);
-    while (ss >> word) cout << word << ' ';
+    string w;
+    int d = 0;
+    while (ss >> w) d++;
+    cout << d;
 }

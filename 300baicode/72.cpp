@@ -2,7 +2,6 @@
 using namespace std;
 int main() {
     string s; getline(cin, s);
-    string word;
-    stringstream ss(s);
-    while (ss >> word) cout << word << ' ';
+    for (char&c : s) c = toupper(c);
+    cout << s;
 }
