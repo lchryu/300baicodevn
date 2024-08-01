@@ -2,6 +2,10 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "format": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xiosbase": "cpp",
+        "iostream": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp"
     }
 }
