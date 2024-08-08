@@ -13,3 +13,4 @@ int main()
     int n; cin >> n;
     cout << dq(n);
 }
+// 250500250000
