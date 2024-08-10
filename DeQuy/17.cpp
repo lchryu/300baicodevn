@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
-using ll = long long;
 void rightToLeft(ll n){
     if (n < 10) cout << n << " ";
     else {
@@ -15,11 +15,7 @@ void leftToRight(ll n) {
         cout << n % 10 << " ";
     }
 }
-int main()
-{
-
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr); 
+int main() {
     ll n; cin >> n;
     leftToRight(n);
     cout << endl;
