@@ -1,32 +1,55 @@
-// #include <bits/stdc++.h>
-// using namespace std;
-// int main(){
-//     int n; cin >> n;
-//     cin.ignore();
-//     for(int i = 1; i <= n; i++){
-//         string s;
-//         getline(cin, s);
-//         // dinh i
-//         stringstream ss(s);
-//         string tmp;
-//         while(ss >> tmp){
-//             int x = stoi(tmp);
-//             if(x > i) cout << i << " " << x << endl;
-//         }
-//     }
-// }
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <string>
+#include <algorithm>
+#include <set>
+#include <map>
+
+#define ll long long
+#define all(x) x.begin(), x.end()
+#define ii pair<int, int>
+#define pb push_back
+#define fi first
+#define se second
+#define FOR(i, a, b) for (int i = a; i <= b; i++)
+
 using namespace std;
+
+vector<ii>edges;
 int main() {
-    int n; cin >> n;
+    std::ios_base::sync_with_stdio(false); std::cin.tie(nullptr);
+
+    int v; cin >> v;
     cin.ignore();
-    for (int v = 1; v <= n; v++) {
+    for (int i = 1; i <= v; i++) {
         string adjList; getline(cin, adjList);
+
         stringstream ss(adjList);
-        string tmp;
-        while (ss >> tmp) {
-            int neighbor = stoi(tmp);
-            if (neighbor > v) cout << v << ' ' << neighbor << endl;
+        string neighbor; // 3, 4, 5
+        while (ss >> neighbor) {
+            if (i < stoi(neighbor)) edges.pb({i, stoi(neighbor)}); // 3, 2
         }
     }
+    for (ii p : edges) cout << p.fi << ' ' << p.se << "\n";
 }
+/*
+                           _
+                        _ooOoo_
+                       o8888888o
+                       88" . "88
+                       (| -_- |)
+                       O\  =  /O
+                    ____/`---'\____
+                  .'  \\|     |//  `.
+                 /  \\|||  :  |||//  \
+                /  _||||| -:- |||||_  \
+                |   | \\\  -  /'| |   |
+                | \_|  `\`---'//  |_/ |
+                \  .-\__ `-. -'__/-.  /
+              ___`. .'  /--.--\  `. .'___
+           ."" '<  `.___\_<|>_/___.' _> \"".
+          | | :  `- \`. ;`. _/; .'/ /  .' ; |
+          \  \ `-.   \_\_`. _.'_/_/  -' _.' /
+===========`-.`___`-.__\ \___  /__.-'_.'_.-'================
+*/
