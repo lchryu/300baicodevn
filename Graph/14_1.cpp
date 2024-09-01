@@ -1,24 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int visited[1001] = {};
-vector<int> alist[1001];
-int pre[1001] = {};
+int visited[1001];
+vector<int> adj[1001];
+int pre[1001];
 int n, m, s, t;
+
 
 void DFS(int i) {
     visited[i] = 1;
-    sort(alist[i].begin(), alist[i].end());
-    for(int j = 0; j < alist[i].size(); j++) {
-        if(visited[alist[i][j]] == 0) {
-            pre[alist[i][j]] = i;
-            DFS(alist[i][j]);
+    sort(adj[i].begin(), adj[i].end());
+    for(int j = 0; j < adj[i].size(); j++) {
+        if(!visited[adj[i][j]]) {
+            pre[adj[i][j]] = i;
+            DFS(adj[i][j]);
         }
     }
 }
 
 void findway() {
-    DFS(s);
+    DFS(s); // ghi lai pre[i]
     if(visited[t] == 0) {
         cout << "-1\n";
         return;
@@ -40,8 +41,8 @@ int main() {
     while(m--) {
         int x, y;
         cin >> x >> y;
-        alist[x].push_back(y);
-        alist[y].push_back(x);
+        adj[x].push_back(y);
+        adj[y].push_back(x);
     }
 
     findway();

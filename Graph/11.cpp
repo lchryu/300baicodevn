@@ -1,20 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int visited[1001] = {};
+int visited[1001];
+int n, m, s;
+vector<int> adj[1001];
 
-void BFS(vector<int> alist[], int s) {
+void BFS(int s) {
     queue<int> q;
     q.push(s);
     visited[s] = 1;
     
-    while(q.empty() == 0) {
+    while(!q.empty()) {
         int i = q.front();
         cout << i << " ";
-        sort(alist[i].begin(), alist[i].end());
-        
-        for(int x : alist[i]) {
-            if(visited[x] == 0) {
+        sort(adj[i].begin(), adj[i].end());
+        for(int x : adj[i]) {
+            if(!visited[x]) {
                 visited[x] = 1;
                 q.push(x);
             }
@@ -24,18 +25,16 @@ void BFS(vector<int> alist[], int s) {
 }
 
 int main() {
-    int n, m, s;
     cin >> n >> m >> s;
-    vector<int> alist[1001];
     
     while(m--) {
         int x, y;
         cin >> x >> y;
-        alist[x].push_back(y);
-        alist[y].push_back(x);
+        adj[x].push_back(y);
+        adj[y].push_back(x);
     }
     
-    BFS(alist, s);
+    BFS(s);
     
     return 0;
 }

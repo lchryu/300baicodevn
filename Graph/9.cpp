@@ -2,35 +2,31 @@
 using namespace std;
 
 vector<int> visited(1001, 0);
+vector<int> adj[1001];
+int n, m, s;
 
-void DFS(vector<int> v[], int i, int n) {
+void DFS(int i) {
     visited[i] = 1;
-    sort(v[i].begin(), v[i].end());
+    sort(adj[i].begin(), adj[i].end());
     cout << i << " ";
-    for(int j = 0; j < v[i].size(); j++) {
-        if(visited[v[i][j]] == 0) {
-            DFS(v, v[i][j], n);
+    for (int j : adj[i]) {
+        if (!visited[j]) {
+            DFS(j);
         }
     }
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    
-    int n, m, s;
     cin >> n >> m >> s;
-    vector<int> alist[1001];
     
     while(m--) {
         int x, y;
         cin >> x >> y;
-        alist[x].push_back(y);
-        alist[y].push_back(x);
+        adj[x].push_back(y);
+        adj[y].push_back(x);
     }
     
-    DFS(alist, s, n);
+    DFS(s);
     
     return 0;
 }

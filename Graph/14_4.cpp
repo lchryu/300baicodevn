@@ -29,7 +29,6 @@ void findPath() {
     for (int v = t; v != -1; v = predecessor[v]) {
         path.push_back(v);
     }
-    
     reverse(path.begin(), path.end());
     for (int v : path) {
         cout << v << " ";

@@ -21,7 +21,8 @@ int main()
     string s;
     getline(cin, s);
     for (char &c : s) c = tolower(c);
-    map<char, int> m;
+    map<char, int> m;Tran Phi An Binh
+n
     for (char c : s)
     {
         if (c != ' ')

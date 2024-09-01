@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int visited[1001] = {};
-int pre[1001] = {};
+int visited[1001];
+int pre[1001];
 int n, m, s, t;
 
 void BFS(vector<int> a[], int s) {

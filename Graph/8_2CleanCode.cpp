@@ -11,6 +11,7 @@ int main() {
     cin >> n;
     
     vector<Edge> edges;
+    // vector<pair<int, int>>edges;
 
     // Input the matrix and store the valid edges
     for(int i = 1; i <= n; i++) {
@@ -24,7 +25,7 @@ int main() {
     }
 
     // Output the edges
-    for(const auto& edge : edges) {
+    for(auto edge : edges) {
         cout << edge.u << " " << edge.v << " " << edge.weight << endl;
     }
 
