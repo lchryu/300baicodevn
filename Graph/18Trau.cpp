@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-
-
 using namespace std;
 
 int checkWay(vector<int> a[], int s, int t) {
