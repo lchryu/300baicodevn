@@ -8,7 +8,7 @@ int main() {
         s += n % 10;
         n /= 10;
     }
-    s %= 10;
+    s = s % 10;
     cout << s << endl;
     if (s == 9) cout << "may man";
     else cout << "chua may man";

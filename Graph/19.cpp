@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <cstring> // Used for memset
+#include <bits/stdc++.h>
 using namespace std;
 
 const int MAX_NODES = 1001;
@@ -42,10 +40,11 @@ int main() {
         adjacencyList[node2].push_back(node1);
     }
 
+
     // Count the initial number of connected components
     int originalComponents = 0;
     for (int i = 1; i <= totalNodes; i++) {
-        if (visited[i] == 0) { // If the node hasn't been visited
+        if (!visited[i]) { // If the node hasn't been visited
             DepthFirstSearch(adjacencyList, i); // Perform DFS
             originalComponents++; // Increment the component count
         }
@@ -56,6 +55,7 @@ int main() {
     for (int i = 1; i <= totalNodes; i++) {
         memset(visited, 0, sizeof(visited)); // Reset the visited array
         visited[i] = 1; // Simulate the removal of the current node
+
         if (check(adjacencyList, totalNodes, originalComponents)) {
             cntDinhTru++; // If the number of components increases, this node is an articulation point
         }
