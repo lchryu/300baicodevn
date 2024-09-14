@@ -7,7 +7,6 @@ vector<int> adj[MAX];   // Adjacency list to store the directed graph
 int visited[MAX];       // 0 = not visited, 1 = visiting, 2 = visited
 bool hasCycle = false;  // Flag to indicate if a cycle is detected
 
-// DFS function to detect cycles in the directed graph
 void DFS(int u) {
     visited[u] = 1;  // Mark the vertex as being visited
     for (int v : adj[u]) {
@@ -26,7 +25,6 @@ int main() {
     int n, m;
     cin >> n >> m;
 
-    // Input edges and build the adjacency list
     for (int i = 0; i < m; i++) {
         int u, v;
         cin >> u >> v;
@@ -37,11 +35,10 @@ int main() {
     for (int i = 1; i <= n; i++) {
         if (visited[i] == 0) {
             DFS(i);
-            if (hasCycle) break;  // Early exit if a cycle is detected
+            if (hasCycle) break;  
         }
     }
 
-    // Output 1 if a cycle is detected, otherwise 0
     cout << (hasCycle ? 1 : 0) << endl;
 
     return 0;
