@@ -2,8 +2,8 @@
 #define ll long long
 using namespace std;
 bool dn(ll n){
-    ll rev = 0;
     ll ori = n;
+    ll rev = 0;
     while (n) {
         rev = rev * 10 + n % 10;
         n /= 10;
